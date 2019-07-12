@@ -1,54 +1,14 @@
 <!doctype html>
 <html lang="us">
 <head>
-	<meta charset="utf-8">
+	<meta charset="utf-8"/>
 	<title>jQuery UI Example Page</title>
-	<link href="jquery-ui.theme.css" rel="stylesheet">
-		<link href="jquery-ui.structure.css" rel="stylesheet">
+<script src="jquery.js"></script>
+		<link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" rel="stylesheet">
 
-	<style>
-	body{
-		font-family: "Trebuchet MS", sans-serif;
-		margin: 50px;
-	}
-	.demoHeaders {
-		margin-top: 2em;
-	}
-	#dialog-link {
-		padding: .4em 1em .4em 20px;
-		text-decoration: none;
-		position: relative;
-	}
-	#dialog-link span.ui-icon {
-		margin: 0 5px 0 0;
-		position: absolute;
-		left: .2em;
-		top: 50%;
-		margin-top: -8px;
-	}
-	#icons {
-		margin: 0;
-		padding: 0;
-	}
-	#icons li {
-		margin: 2px;
-		position: relative;
-		padding: 4px 0;
-		cursor: pointer;
-		float: left;
-		list-style: none;
-	}
-	#icons span.ui-icon {
-		float: left;
-		margin: 0 4px;
-	}
-	.fakewindowcontain .ui-widget-overlay {
-		position: absolute;
-	}
-	select {
-		width: 200px;
-	}
-	</style>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
 </head>
 <body>
 
@@ -56,19 +16,56 @@
 
 <!-- Autocomplete -->
 <h2 class="demoHeaders">Autocomplete</h2>
-<div id="autocomplete_box">
+<div id="autocomplete_box" style="width:50%;">
 	
 </div>
 
 
-<script src="jquery.js"></script>
 <!--<script src="jquery-ui.js"></script>-->
-<script src="sample.js"></script>
 <script src="jquery.glossSearch.js"></script>
 
 <!--<script src="index-js.js"></script>-->
 <script>
-$('#autocomplete_box').glossSearch('init')
+var sample1=[
+  {
+    "key": "2pane",
+    "reformulation": [],
+    "short_description": "2-х панельный интерфейс почты",
+    "full_description": "2-х панельный интерфейс почты. ((https://jing.yandex-team.ru/files/link551/2pane.png_279321_2019-06-04_21-19-48.png Скриншот))"
+  },
+  {
+    "key": "App",
+    "reformulation": [
+      "Апп",
+      "App",
+      "Application",
+      "Приложение"
+    ],
+    "short_description": "Мобильное приложение",
+    "full_description": "Мобильное приложение - программное обеспечение, предназначенное для работы на смартфонах, планшетах"
+  },
+  {
+    "key": "PTR",
+    "reformulation": [
+      "Pull To Refresh",
+      "ПтР",
+      "p2r"
+    ],
+    "short_description": "Потянуть экран вниз для рефреша страницы",
+    "full_description": "Действие: потянуть экран вниз для рефреша страницы"
+  },
+  {
+    "key": "Навигационная цепочка",
+    "reformulation": [
+      "Хлебные крошки"
+    ],
+    "short_description": "",
+    "full_description": "Путь по файловой системе от корня до рабочего каталога самого глубокого уровня - https://jing.yandex-team.ru/files/link551/Glossarii__Wiki_2019-06-04_21-21-25.png"
+  }
+];
+$().glossSearch('init',{sample:sample1})
+$('#autocomplete_box').glossSearch('add',{sample:sample})
+
 </script>
 
 
